@@ -1,0 +1,15 @@
+D:\users\vanya\work\!dummy\lessons\Learning\C# Essential\myHomeWork\001_Classes\001_Classes\AddTask\bin\Debug\AddTask.exe.config
+D:\users\vanya\work\!dummy\lessons\Learning\C# Essential\myHomeWork\001_Classes\001_Classes\AddTask\bin\Debug\AddTask.exe
+D:\users\vanya\work\!dummy\lessons\Learning\C# Essential\myHomeWork\001_Classes\001_Classes\AddTask\bin\Debug\AddTask.pdb
+D:\users\vanya\work\!dummy\lessons\Learning\C# Essential\myHomeWork\001_Classes\001_Classes\AddTask\obj\Debug\AddTask.csprojResolveAssemblyReference.cache
+D:\users\vanya\work\!dummy\lessons\Learning\C# Essential\myHomeWork\001_Classes\001_Classes\AddTask\obj\Debug\AddTask.exe
+D:\users\vanya\work\!dummy\lessons\Learning\C# Essential\myHomeWork\001_Classes\001_Classes\AddTask\obj\Debug\AddTask.pdb
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\001_Classes\AddTask\bin\Debug\AddTask.exe.config
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\001_Classes\AddTask\obj\Debug\AddTask.exe
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\001_Classes\AddTask\obj\Debug\AddTask.pdb
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\AddTask\bin\Debug\AddTask.exe.config
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\AddTask\obj\Debug\AddTask.exe
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\AddTask\obj\Debug\AddTask.pdb
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\AddTask\bin\Debug\AddTask.exe
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\AddTask\bin\Debug\AddTask.pdb
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\AddTask\obj\Debug\AddTask.csprojResolveAssemblyReference.cache
