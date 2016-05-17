@@ -18,7 +18,7 @@ namespace Task01
 
     double AreaCalculator()
     {
-      return side1 * side2;
+      return side1 * side2; 
     }
 
     double PerimeterCalculator()

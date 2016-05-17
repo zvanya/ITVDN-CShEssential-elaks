@@ -43,7 +43,7 @@ namespace Task01
       Console.WriteLine("Perimeter = {0}", rec1.Perimeter);
       Console.WriteLine("Area = {0}", rec1.Area);
 
-      Console.ReadKey();
+      Console.ReadKey(); 
     }
   }
 }
