@@ -10,6 +10,12 @@ namespace Task03
   {
     static void Main(string[] args)
     {
+      Book b = new Book("BookName1");
+
+      b.AuthorName = "AuthorName1";
+      b.ContentText = "ContentText1";
+
+      Console.ReadKey();
     }
   }
 }

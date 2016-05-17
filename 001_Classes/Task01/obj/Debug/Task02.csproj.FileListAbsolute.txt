@@ -1,3 +1,6 @@
 D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\Task01\bin\Debug\Task01.exe.config
 D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\Task01\obj\Debug\Task01.exe
 D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\Task01\obj\Debug\Task01.pdb
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\Task01\bin\Debug\Task01.exe
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\Task01\bin\Debug\Task01.pdb
+D:\users\vanya\learning\[ITVDN]-C#Basic\MyHomeWork[elaks]\001_Classes\Task01\obj\Debug\Task02.csprojResolveAssemblyReference.cache
