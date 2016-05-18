@@ -15,7 +15,7 @@ namespace Task04
 
       Figure f3 = new Figure(A, B, new Point("C", 1, 7));
 
-
+      Console.WriteLine("Фигура: {0}\nПериметр: {1}", f3.Name, f3.PerimeterCalculator());
 
       Console.ReadKey();
     }
