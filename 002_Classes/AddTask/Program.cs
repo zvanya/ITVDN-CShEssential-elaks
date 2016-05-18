@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace AddTask
 {
-  class Program
+  class User
   {
-    class User
+    readonly string registrationDate = null;
+
+    public User(string registrationDate)
     {
-      readonly string registrationDate = null;
-
-      public User(string registrationDate)
-      {
-        this.registrationDate = registrationDate;
-      }
-
-      public string RegistrationDate { get; }
-      public string Login { get; set; }
-      public string Name { get; set; }
-      public string Surname { get; set; }
-      public string Age { get; set; }
-
-      public void ShowInfo()
-      {
-        Console.WriteLine("User: {0}\nДата регистрации: {1}\nЛогин: {2}", Name, registrationDate, Login);
-      }
+      this.registrationDate = registrationDate;
     }
 
+    public string RegistrationDate { get; }
+    public string Login { get; set; }
+    public string Name { get; set; }
+    public string Surname { get; set; }
+    public string Age { get; set; }
+
+    public void ShowInfo()
+    {
+      Console.WriteLine("User: {0}\nДата регистрации: {1}\nЛогин: {2}", Name, registrationDate, Login);
+    }
+  }
+
+  class Program
+  {
     static void Main(string[] args)
     {
       User myUser = new User("2005.05.18");
