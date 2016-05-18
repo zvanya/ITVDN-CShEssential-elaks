@@ -10,6 +10,14 @@ namespace Task04
   {
     static void Main(string[] args)
     {
+      Point A = new Point("A", -31, 4);
+      Point B = new Point("B", 8, 3);
+
+      Figure f3 = new Figure(A, B, new Point("C", 1, 7));
+
+
+
+      Console.ReadKey();
     }
   }
 }
