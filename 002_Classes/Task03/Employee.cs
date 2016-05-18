@@ -13,7 +13,6 @@ namespace Task03
     string name = null;
     string surname = null;
     PositionList position;
-    int experience = 0;
     double taxKoef = 0.1;
     double expKoef = 1.2;
 
@@ -38,11 +37,7 @@ namespace Task03
     public string Surname
     { get { return surname; } }
 
-    public int Experience
-    {
-      get { return experience; }
-      set { experience = value; }
-    }
+    public int Experience { get; set; }
 
     double PayCalculate()
     {
