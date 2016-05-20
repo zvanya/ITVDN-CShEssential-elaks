@@ -8,6 +8,7 @@ namespace Task03
 {
   class Vehicle // Транспортное средство
   {
+    protected string type = null;
     protected double price = 0;
     protected double speed = 0;
     protected int yearCreation = 0;
@@ -21,7 +22,22 @@ namespace Task03
 
     public double X { get; set; }
     public double Y { get; set; }
+    public double Price { get { return price; } set { price = value; } }
+    public double Speed { get { return speed; } set { speed = value; } }
+    public int YearCreation { get { return yearCreation; } set { yearCreation = value; } }
+    string Type
+    {
+      get
+      {
+        //TODO: добавить проверку
+        return type;
+      }
+    }
 
-
+    void ShowInfo()
+    {
+      Console.WriteLine("Общие характеристики:\n");
+      Console.WriteLine("Общие характеристики:\n");
+    }
   }
 }
