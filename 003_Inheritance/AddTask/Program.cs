@@ -10,7 +10,6 @@ namespace AddTask
   {
     public virtual void Print(string value)
     {
-      Console.ForegroundColor = ConsoleColor.Cyan;
       Console.WriteLine(value);
     }
   }
@@ -20,7 +19,7 @@ namespace AddTask
     public override void Print(string value)
     {
       Console.ForegroundColor = ConsoleColor.Yellow;
-      Console.WriteLine(value);
+      base.Print(value);
     }
   }
   class Canon : Printer
@@ -28,7 +27,7 @@ namespace AddTask
     public override void Print(string value)
     {
       Console.ForegroundColor = ConsoleColor.Red;
-      Console.WriteLine(value);
+      base.Print(value);
     }
   }
 
@@ -38,15 +37,9 @@ namespace AddTask
     {
 
       Printer c = new Canon();
-
       c.Print("canon");
 
-      Printer p = c as Printer;
-
-      p.Print("printer");
-
       Printer hp = new HP();
-
       hp.Print("HP");
 
       Console.ReadKey();
