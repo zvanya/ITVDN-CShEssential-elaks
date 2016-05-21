@@ -20,24 +20,82 @@ namespace Task03
       this.yearCreation = yearCreation;
     }
 
-    public double X { get; set; }
-    public double Y { get; set; }
+    public double X { get; set; } = 0;
+    public double Y { get; set; } = 0;
     public double Price { get { return price; } set { price = value; } }
-    public double Speed { get { return speed; } set { speed = value; } }
-    public int YearCreation { get { return yearCreation; } set { yearCreation = value; } }
+    public double Speed { get { return speed; } }
+    public int YearCreation { get { return yearCreation; } }
     string Type
+    { get { return type == null ? "Неизв.тип трансп.средства" : type; } }
+
+    public virtual void ShowInfo()
     {
-      get
-      {
-        //TODO: добавить проверку
-        return type;
-      }
+      Console.WriteLine("Тип:{0}", Type);
+      Console.WriteLine(new string('-', 10));
+      Console.WriteLine("Координаты: X = {0}; Y = {1}", X, Y);
+      Console.WriteLine(new string('-', 10));
+      Console.WriteLine("Общие характеристики:");
+      Console.WriteLine("Price: {0}", Price);
+      Console.WriteLine("Speed: {0}", Speed);
+      Console.WriteLine("YearCreation: {0}", YearCreation);
+    }
+  }
+
+  class Car : Vehicle
+  {
+    public Car(double price, double speed, int yearCreation) : base(price, speed, yearCreation)
+    {
+      type = "Car";
     }
 
-    void ShowInfo()
+    public override void ShowInfo()
     {
-      Console.WriteLine("Общие характеристики:\n");
-      Console.WriteLine("Общие характеристики:\n");
+      base.ShowInfo();
+      Console.WriteLine(new string('-', 50));
+    }
+  }
+
+  class Plane : Vehicle
+  {
+    int height = 0;
+    int passCount = 0;
+    public Plane(double price, double speed, int yearCreation, int height, int passCount) : base(price, speed, yearCreation)
+    {
+      type = "Plane";
+      this.height = height;
+      this.passCount = passCount;
+    }
+
+    public override void ShowInfo()
+    {
+      base.ShowInfo();
+      Console.WriteLine(new string('-', 10));
+      Console.WriteLine("Доп. характеристики:");
+      Console.WriteLine("height: {0}", height);
+      Console.WriteLine("passCount: {0}", passCount);
+      Console.WriteLine(new string('-', 50));
+    }
+  }
+
+  class Ship : Vehicle
+  {
+    string port = null;
+    int passCount = 0;
+    public Ship(double price, double speed, int yearCreation, string port, int passCount) : base(price, speed, yearCreation)
+    {
+      type = "Ship";
+      this.port = port;
+      this.passCount = passCount;
+    }
+
+    public override void ShowInfo()
+    {
+      base.ShowInfo();
+      Console.WriteLine(new string('-', 10));
+      Console.WriteLine("Доп. характеристики:");
+      Console.WriteLine("port: {0}", port);
+      Console.WriteLine("passCount: {0}", passCount);
+      Console.WriteLine(new string('-', 50));
     }
   }
 }
