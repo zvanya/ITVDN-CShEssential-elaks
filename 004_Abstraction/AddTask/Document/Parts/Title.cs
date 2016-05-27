@@ -4,7 +4,7 @@ namespace AddTask
 {
     class Title : DocumentPart
     {
-      noContent = "Заголовок отсутствует.";
+      noContent = "Заголовок отсутствует."; //подчеркивает красным noContent =
 
       
 
