@@ -2,20 +2,20 @@
 
 namespace AddTask
 {
-    class Title : DocumentPart
+  class Title : DocumentPart
+  {
+    public Title()
     {
-      noContent = "Заголовок отсутствует."; //подчеркивает красным noContent =
-
-      
-
+      noContent = "Заголовок отсутствует.";
     }
+  }
 
   abstract class DocumentPart
   {
     protected string content = null;
     protected string noContent = "Контент отсутствует";
 
-    string Content
+    public virtual string Content
     {
       set { content = value; }
       get
@@ -27,7 +27,7 @@ namespace AddTask
       }
     }
 
-    void Show(ConsoleColor color)
+    public virtual void Show(ConsoleColor color)
     {
       Console.ForegroundColor = color;
       Console.WriteLine(Content);
