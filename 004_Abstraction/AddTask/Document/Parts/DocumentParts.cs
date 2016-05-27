@@ -7,6 +7,23 @@ namespace AddTask
     public Title()
     {
       noContent = "Заголовок отсутствует.";
+      color = ConsoleColor.Cyan;
+    }
+  }
+  class Body : DocumentPart
+  {
+    public Body()
+    {
+      noContent = "Тело документа отсутствует.";
+      color = ConsoleColor.Green;
+    }
+  }
+  class Footer : DocumentPart
+  {
+    public Footer()
+    {
+      noContent = "Нижний колонтитул отсутствует.";
+      color = ConsoleColor.Yellow;
     }
   }
 
@@ -14,6 +31,7 @@ namespace AddTask
   {
     protected string content = null;
     protected string noContent = "Контент отсутствует";
+    protected ConsoleColor color;
 
     public virtual string Content
     {
@@ -27,7 +45,7 @@ namespace AddTask
       }
     }
 
-    public virtual void Show(ConsoleColor color)
+    public virtual void Show()
     {
       Console.ForegroundColor = color;
       Console.WriteLine(Content);

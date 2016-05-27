@@ -44,9 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Document\Document.cs" />
-    <Compile Include="Document\Parts\Body.cs" />
-    <Compile Include="Document\Parts\Footer.cs" />
-    <Compile Include="Document\Parts\Title.cs" />
+    <Compile Include="Document\Parts\DocumentParts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
