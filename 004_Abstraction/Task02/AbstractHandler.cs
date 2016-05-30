@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task02
 {
-  class AbstractHandler
+  abstract class AbstractHandler
   {
     public void Open()
     { }
