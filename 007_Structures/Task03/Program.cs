@@ -26,6 +26,10 @@ namespace Task03
     {
       myStruct.change = "изменено";
     }
+    static void StructTaker(ref MyStruct myStruct)
+    {
+      myStruct.change = "изменено";
+    }
 
     static void Main(string[] args)
     {
@@ -45,6 +49,13 @@ namespace Task03
 
       ClassTaker(c);
       StructTaker(s);
+
+      Console.WriteLine("c.change = {0}", c.change);
+      Console.WriteLine("s.change = {0}", s.change);
+      Console.WriteLine(new string('-', 50));
+
+      ClassTaker(c);
+      StructTaker(ref s);
 
       Console.WriteLine("c.change = {0}", c.change);
       Console.WriteLine("s.change = {0}", s.change);
