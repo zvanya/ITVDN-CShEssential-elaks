@@ -37,7 +37,6 @@ namespace Task03
         return;
       }
 
-      //float[,] newM = new float[m.GetLength(0), m.GetLength(1)];
       float[,] newM = new float[newRow, newCol];
 
       for (int i = 0; i < newRow; i++)
@@ -48,16 +47,7 @@ namespace Task03
         }
       }
 
-      m = new float[newRow, newCol];
-
-      for (int i = 0; i < newRow; i++)
-      {
-        for (int j = 0; j < newCol; j++)
-        {
-          m[i, j] = newM[i, j];
-        }
-      }
-
+      m = newM;
     }
     
     public void Resize(int newRow, int newCol)
@@ -67,7 +57,7 @@ namespace Task03
         Console.WriteLine("Неверно задан массив на входе.");
         return;
       }
-      if (newRow < 1 || newCol < 1 || newRow > m.GetLength(0) || newCol > m.GetLength(1))
+      if (newRow < 1 || newCol < 1 || newRow > this.m.GetLength(0) || newCol > this.m.GetLength(1))
       {
         Console.WriteLine("Неверно заданы размеры нового массива.");
         return;
@@ -83,7 +73,7 @@ namespace Task03
         }
       }
 
-      m = newM;
+      this.m = newM;
     }
 
     public void Show()
