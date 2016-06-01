@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Task03
 {
-  struct MyStruct
-  {
-    public string change;
-  }
   class MyClass
   {
     public string change = null;
+  }
+  struct MyStruct
+  {
+    public string change;
   }
 
   class Program
@@ -29,6 +29,28 @@ namespace Task03
 
     static void Main(string[] args)
     {
+      MyClass c = new MyClass();
+      MyStruct s = new MyStruct();
+
+      Console.WriteLine("c.change = {0}", c.change);
+      Console.WriteLine("s.change = {0}", s.change);
+      Console.WriteLine(new string('-', 50));
+
+      c.change = "не изменено";
+      s.change = "не изменено";
+
+      Console.WriteLine("c.change = {0}", c.change);
+      Console.WriteLine("s.change = {0}", s.change);
+      Console.WriteLine(new string('-', 50));
+
+      ClassTaker(c);
+      StructTaker(s);
+
+      Console.WriteLine("c.change = {0}", c.change);
+      Console.WriteLine("s.change = {0}", s.change);
+      Console.WriteLine(new string('-', 50));
+
+      Console.ReadKey();
     }
   }
 }
