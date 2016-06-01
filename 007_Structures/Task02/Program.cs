@@ -52,14 +52,19 @@ namespace Task02
       Console.WriteLine(new string('-', 50));
       Console.Write("Введите номер поезда:");
       trainNumber = Console.ReadLine();
-
+      int result = 0;
       for (int i = 0; i < trainCount; i++)
       {
         if (t[i].TrainNumber == trainNumber)
         {
+          result = 1;
           t[i].ShowInfo();
           break;
         }
+      }
+      if (result == 0)
+      {
+        Console.WriteLine("Поезд с таким номером не найден.");
       }
       Console.ReadKey();
     }

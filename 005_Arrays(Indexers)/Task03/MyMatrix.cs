@@ -24,7 +24,7 @@ namespace Task03
           m[i, j] = r.Next(0, 101);
     }
 
-    public static void Resize(int newRow, int newCol, ref float[,] m) // Поменять ref на out
+    public static void Resize(int newRow, int newCol, ref float[,] m)
     {
       if (m.GetLength(0) < 1 || m.GetLength(1) < 1)
       {
@@ -37,7 +37,8 @@ namespace Task03
         return;
       }
 
-      float[,] newM = new float[m.GetLength(0), m.GetLength(1)];
+      //float[,] newM = new float[m.GetLength(0), m.GetLength(1)];
+      float[,] newM = new float[newRow, newCol];
 
       for (int i = 0; i < newRow; i++)
       {
