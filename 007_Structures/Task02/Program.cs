@@ -28,6 +28,7 @@ namespace Task02
     static void Main(string[] args)
     {
       int trainCount = 3;
+      string trainNumber = null;
 
       Train[] t = new Train[trainCount];
 
@@ -47,6 +48,19 @@ namespace Task02
       for (int i = 0; i < trainCount; i++)
         t[i].ShowInfo();
 
+      Console.WriteLine(new string('-', 50));
+      Console.WriteLine(new string('-', 50));
+      Console.Write("Введите номер поезда:");
+      trainNumber = Console.ReadLine();
+
+      for (int i = 0; i < trainCount; i++)
+      {
+        if (t[i].TrainNumber == trainNumber)
+        {
+          t[i].ShowInfo();
+          break;
+        }
+      }
       Console.ReadKey();
     }
   }
