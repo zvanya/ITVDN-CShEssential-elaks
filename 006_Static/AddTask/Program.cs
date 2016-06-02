@@ -10,20 +10,20 @@ namespace AddTask
   {
     static class Calculator
     {
-      public static float Plus(float x1, float x2)
+      public static float Add(float x1, float x2)
       {
         return x1 + x2;
       }
       public static float Dev(float x1, float x2)
       {
-        return x1 / x2;
+        return x2 != 0 ? x1 / x2 : 0;
       }
 
     }
     static void Main(string[] args)
     {
 
-      Console.WriteLine(Calculator.Plus(15, 5));
+      Console.WriteLine(Calculator.Add(15, 5));
       Console.ReadKey();
     }
   }
