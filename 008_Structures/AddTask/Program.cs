@@ -25,6 +25,8 @@ namespace AddTask
 
       Console.WriteLine("До следующего дня рождения: \n дней: {0}", ((TimeSpan)(DateTime.Parse(nextBirthday) - now)).Days);
 
+      Console.WriteLine("Вы прожили {0} дней", ((TimeSpan)(DateTime.Parse(nextBirthday) - birthday)).Days);
+
       Console.ReadKey();
     }
   }
