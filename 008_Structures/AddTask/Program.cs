@@ -18,14 +18,19 @@ namespace AddTask
       DateTime nextBirthdayYear = now.AddYears(1);
       string nextBirthday = string.Format ("{0}.{1}.{2}", birthday.Day, birthday.Month, nextBirthdayYear.Year);
 
-      Console.WriteLine("Сегодня: {0}", now);
-
       Console.WriteLine("Дата рождения: {0}", birthday.ToString());
+
+      Console.WriteLine("Сегодня: {0}", now);
       Console.WriteLine("Следующий день рождения: {0}", DateTime.Parse(nextBirthday));
 
-      Console.WriteLine("До следующего дня рождения: \n дней: {0}", ((TimeSpan)(DateTime.Parse(nextBirthday) - now)).Days);
+      int days = birthday.AddYears(now.Year - birthday.Year).Day - now.Day;
 
-      Console.WriteLine("Вы прожили {0} дней", ((TimeSpan)(DateTime.Parse(nextBirthday) - birthday)).Days);
+      if (days > 0) Console.WriteLine("До следующего дня рождения: \n дней: {0}", days);
+      else
+        Console.WriteLine("До следующего дня рождения: \n дней: {0}", -days);
+
+
+      Console.WriteLine("Вы прожили {0} дней", ((TimeSpan)(now - birthday)).Days);
 
       Console.ReadKey();
     }
