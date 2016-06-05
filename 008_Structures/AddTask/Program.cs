@@ -16,21 +16,33 @@ namespace AddTask
       DateTime now = DateTime.Now;
 
       DateTime nextBirthdayYear = now.AddYears(1);
-      string nextBirthday = string.Format ("{0}.{1}.{2}", birthday.Day, birthday.Month, nextBirthdayYear.Year);
+      DateTime nextBirthday;
+
+      int daysToNextBirthday = 0;
+
+      Console.WriteLine("Сегодня: {0}", now);
 
       Console.WriteLine("Дата рождения: {0}", birthday.ToString());
 
-      Console.WriteLine("Сегодня: {0}", now);
-      Console.WriteLine("Следующий день рождения: {0}", DateTime.Parse(nextBirthday));
+      int days = birthday.AddYears(now.Year - birthday.Year).DayOfYear - now.DayOfYear;
 
-      int days = birthday.AddYears(now.Year - birthday.Year).Day - now.Day;
+      //int days = new DateTime(now.Year, birthday.Month, birthday.Day).DayOfYear - now.DayOfYear;
 
-      if (days > 0) Console.WriteLine("До следующего дня рождения: \n дней: {0}", days);
+      if (days > 0)
+      {
+        nextBirthday = new DateTime(now.Year, birthday.Month, birthday.Day);
+        daysToNextBirthday = days;
+      }
       else
-        Console.WriteLine("До следующего дня рождения: \n дней: {0}", -days);
+      {
+        nextBirthday = new DateTime(nextBirthdayYear.Year, birthday.Month, birthday.Day);
+        daysToNextBirthday = Math.Abs(days) + ((TimeSpan)(nextBirthday - now)).Days;
+      }
 
+      Console.WriteLine("Следующий день рождения: {0}", nextBirthday);
+      Console.WriteLine("До следующего дня рождения дней: {0}", daysToNextBirthday);
 
-      Console.WriteLine("Вы прожили {0} дней", ((TimeSpan)(now - birthday)).Days);
+      Console.WriteLine("Вы прожили дней: {0}", ((TimeSpan)(now - birthday)).Days);
 
       Console.ReadKey();
     }
