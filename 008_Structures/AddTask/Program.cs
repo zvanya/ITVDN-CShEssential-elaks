@@ -36,7 +36,7 @@ namespace AddTask
       else
       {
         nextBirthday = new DateTime(nextBirthdayYear.Year, birthday.Month, birthday.Day);
-        daysToNextBirthday = Math.Abs(days) + ((TimeSpan)(nextBirthday - now)).Days;
+        daysToNextBirthday = ((TimeSpan)(nextBirthday - now)).Days;
       }
 
       Console.WriteLine("Следующий день рождения: {0}", nextBirthday);
