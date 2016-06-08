@@ -11,16 +11,10 @@ namespace Task03
     public delegate double myMath(myDelegate[] d);
     public delegate int myDelegate();
 
-    static public int myRandom()
-    {
-      Random r = new Random();
-      return r.Next(0, 100);
-    }
+    static Random r = new Random();
 
     static void Main(string[] args)
     {
-      Random r = new Random();
-
       myDelegate[] d = new myDelegate[] { () => r.Next(0, 100), () => r.Next(0, 100), () => r.Next(0, 100) };
 
       myMath mMAvg = delegate (myDelegate[] l)
