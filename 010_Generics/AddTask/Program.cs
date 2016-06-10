@@ -39,7 +39,7 @@ namespace AddTask
       B b = MyClass<B>.FactoryMethod();
       b.Print();
 
-      Console.ReadKey();      
+      Console.ReadKey();    
     }
   }
 }

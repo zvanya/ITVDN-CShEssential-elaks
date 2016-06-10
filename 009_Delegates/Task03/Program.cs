@@ -32,6 +32,11 @@ namespace Task03
 
       Console.WriteLine("mMAvg(myDelegate[] d) = {0}", mMAvg.Invoke(d));
 
+      int[] x = new int[] { 5, 5, 7 };
+      x.Average();
+
+
+
       Console.ReadKey();
     }
   }
