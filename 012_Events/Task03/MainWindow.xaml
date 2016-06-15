@@ -1,0 +1,15 @@
+﻿<Window x:Class="Task03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task03"
+        mc:Ignorable="d"
+        Title="Секундомер" Height="200" Width="310">
+    <Grid>
+        <Label x:Name="label" Content="00" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="51" Margin="0,10,0,0" VerticalAlignment="Top" Width="78" FontSize="36"/>
+        <Button x:Name="button" Content="Старт" HorizontalAlignment="Left" Height="52" Margin="21,94,0,0" VerticalAlignment="Top" Width="79"/>
+        <Button x:Name="button_Copy" Content="Стоп" HorizontalAlignment="Left" Height="52" Margin="112,94,0,0" VerticalAlignment="Top" Width="79"/>
+        <Button x:Name="button_Copy1" Content="Сброс" HorizontalAlignment="Left" Height="52" Margin="203,94,0,0" VerticalAlignment="Top" Width="79"/>
+    </Grid>
+</Window>
