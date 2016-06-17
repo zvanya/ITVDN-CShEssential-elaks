@@ -10,24 +10,24 @@ namespace AddTask
     class Program
     {
         static Thread t = null;
-        static int k = 0;
+        static int k = 15;
 
-        static void myMethod(object arg)
+        static void myMethod()
         {
             t = new Thread(myMethod);
             Console.WriteLine("myMethod - {0}", k);
 
-            k++;
+            k--;
 
-            if (k == (int)arg) Thread.CurrentThread.Abort();
+            if (k == 0) Thread.CurrentThread.Abort();
 
-            t.Start(15);
+            t.Start();
         }
 
         static void Main(string[] args)
         {
             t = new Thread(myMethod);
-            t.Start(15);
+            t.Start();
 
             Console.ReadKey();
         }
