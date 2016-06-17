@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task04_Calculator"
         mc:Ignorable="d"
-        Title="Калькулятор" Height="300" Width="300" MinHeight="300" MinWidth="300" MaxHeight="450" MaxWidth="450">
+        Title="Калькулятор" WindowStartupLocation="CenterScreen" Height="400" Width="400" MinHeight="300" MinWidth="300" MaxHeight="450" MaxWidth="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="60" MaxHeight="60"></RowDefinition>
@@ -21,27 +21,27 @@
             <ColumnDefinition MaxWidth="60"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Row="0" Grid.ColumnSpan="3" x:Name="textBox" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" MinHeight="36" Margin="2" TextWrapping="NoWrap" Text="0" FontSize="24"/>
-        <Button Grid.Row="0" Grid.Column="3" x:Name="bClear" Content="C" MinHeight="36" Margin="10" FontSize="18" FontWeight="Bold"/>
+        <TextBox Grid.Row="0" Grid.ColumnSpan="3" x:Name="textBox" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" MinHeight="36" Margin="2" TextWrapping="NoWrap" Text="0" FontSize="24" IsEnabled="False"/>
+        <Button Grid.Row="0" Grid.Column="3" x:Name="bClear" Content="C" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold" Click="bClear_Click"/>
 
-        <Button Grid.Row="1" Grid.Column="0" x:Name="bN1" Content="1" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="1" Grid.Column="1" x:Name="bN2" Content="2" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="1" Grid.Column="2" x:Name="bN3" Content="3" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="1" Grid.Column="3" x:Name="bDiv" Content="/" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold"/>
+        <Button Grid.Row="1" Grid.Column="0" x:Name="bN1" Content="1" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="1" Grid.Column="1" x:Name="bN2" Content="2" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="1" Grid.Column="2" x:Name="bN3" Content="3" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="bDiv" Content="/" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold" Click="bOperation_Click"/>
 
-        <Button Grid.Row="2" Grid.Column="0" x:Name="bN4" Content="4" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="2" Grid.Column="1" x:Name="bN5" Content="5" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="2" Grid.Column="2" x:Name="bN6" Content="6" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="2" Grid.Column="3" x:Name="bMul" Content="*" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold"/>
+        <Button Grid.Row="2" Grid.Column="0" x:Name="bN4" Content="4" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="2" Grid.Column="1" x:Name="bN5" Content="5" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="2" Grid.Column="2" x:Name="bN6" Content="6" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="2" Grid.Column="3" x:Name="bMul" Content="*" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold" Click="bOperation_Click"/>
 
-        <Button Grid.Row="3" Grid.Column="0" x:Name="bN7" Content="7" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="3" Grid.Column="1" x:Name="bN8" Content="8" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="3" Grid.Column="2" x:Name="bN9" Content="9" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="3" Grid.Column="3" x:Name="bAdd" Content="+" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold"/>
+        <Button Grid.Row="3" Grid.Column="0" x:Name="bN7" Content="7" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="bN8" Content="8" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="bN9" Content="9" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="bAdd" Content="+" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold" Click="bOperation_Click"/>
 
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="bN0" Content="0" MinHeight="36" Margin="2" FontSize="18"/>
-        <Button Grid.Row="4" Grid.Column="2" x:Name="bEQ" Content="=" MinHeight="36" Margin="5" FontSize="24" FontWeight="Bold"/>
-        <Button Grid.Row="4" Grid.Column="3" x:Name="bMin" Content="-" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold"/>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="bN0" Content="0" MinHeight="36" Margin="2" FontSize="18" Click="bN_Click"/>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="bEQ" Content="=" MinHeight="36" Margin="5" FontSize="24" FontWeight="Bold" Click="bOperation_Click"/>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="bMin" Content="-" MinHeight="36" Margin="5" FontSize="18" FontWeight="Bold" Click="bOperation_Click"/>
 
     </Grid>
 </Window>
