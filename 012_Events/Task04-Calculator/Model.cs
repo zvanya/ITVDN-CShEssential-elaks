@@ -109,7 +109,7 @@ namespace Task04_Calculator
             return "0";
         }
 
-        public string DisplayType(string btnN, string displayText)
+        public string DisplayN(string btnN, string displayText)
         {
             //TODO: Добавить проверку количества разрядов
             string n = null;

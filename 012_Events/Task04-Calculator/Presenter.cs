@@ -23,7 +23,7 @@ namespace Task04_Calculator
 
         void mw_btnNClick(object sender, System.EventArgs e)
         {
-            mw.textBox.Text = model.DisplayType(((Button)sender).Name, mw.textBox.Text);
+            mw.textBox.Text = model.DisplayN(((Button)sender).Name, mw.textBox.Text);
         }
         void mw_btnOperationClick(object sender, System.EventArgs e)
         {
