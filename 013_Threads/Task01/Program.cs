@@ -21,21 +21,24 @@ namespace Task01
 
         static void DrawColumn()
         {
+            int length = 0;
+            int k = 0;
+
             lock (locker2)
             {
                 hash = Thread.CurrentThread.GetHashCode();
                 colnum.Add(hash, colNumber);
+            
+                colNumber += 2;
+
+                length = r.Next(3, 7);
+
+                k = maxRows - length;
             }
 
-            colNumber += 2;
-
-            int length = r.Next(3, 7);
-
-            int k = maxRows - length;
-                
             while (k > 0)
             {
-                Thread.Sleep(r.Next(50, 3000));
+                Thread.Sleep(r.Next(20, 3000));
 
                 lock (locker2)
                 {
