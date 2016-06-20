@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Task01
+namespace Task02
 {
     class Program
     {
@@ -17,7 +17,7 @@ namespace Task01
         static int hash = 0;
         static Dictionary<int, int> colnum = new Dictionary<int, int>();
         static int colNumber = 0;
-        static char[] char_arr = new char[] { '!','@','0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I' };
+        static char[] char_arr = new char[] { '!', '@', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' };
 
         static void DrawColumn()
         {
@@ -28,7 +28,7 @@ namespace Task01
             {
                 hash = Thread.CurrentThread.GetHashCode();
                 colnum.Add(hash, colNumber);
-            
+
                 colNumber += 2;
 
                 length = r.Next(3, 7);
@@ -81,7 +81,7 @@ namespace Task01
             r = new Random();
 
             Console.WindowWidth = maxCols * 2;
-            Console.WindowHeight = 50;
+            Console.WindowHeight = maxRows * 2;
 
             Console.CursorVisible = false;
 
