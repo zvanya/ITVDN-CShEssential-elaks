@@ -38,7 +38,7 @@ namespace Task02
 
             while (k > 0)
             {
-                Thread.Sleep(r.Next(20, 3000));
+                Thread.Sleep(r.Next(10, 4000));
 
                 lock (locker2)
                 {
@@ -81,7 +81,7 @@ namespace Task02
             r = new Random();
 
             Console.WindowWidth = maxCols * 2;
-            Console.WindowHeight = maxRows * 2;
+            Console.WindowHeight = 50;
 
             Console.CursorVisible = false;
 

@@ -38,7 +38,7 @@ namespace Task01
 
             while (k > 0)
             {
-                Thread.Sleep(r.Next(20, 3000));
+                Thread.Sleep(r.Next(10, 4000));
 
                 lock (locker2)
                 {
