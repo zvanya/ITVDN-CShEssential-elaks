@@ -7,65 +7,84 @@ using System.Threading;
 
 namespace Task01
 {
-    class Arg
-    {
-        public int Length { get; set; }
-        public int Delay { get; set; }
-        public int ColNumber { get; set; }
-    }
-
     class Program
     {
-        static int maxRows = 40;
-        static int maxCols = 5;
-        static Thread t = null;
+        static int maxRows = 30;
+        static int maxCols = 60;
         static Random r = null;
+        static object locker1 = new object();
+        static object locker2 = new object();
+        static int hash = 0;
+        static Dictionary<int, int> colnum = new Dictionary<int, int>();
+        static int colNumber = 0;
+        static char[] char_arr = new char[] { '!','@','0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I' };
 
-        static void ShowSymbol(int offset, string symbol, ConsoleColor color)
+        static void DrawColumn()
         {
-            Console.ForegroundColor = color;
-            Console.WriteLine(new string(' ', offset) + symbol);
-        }
+            lock (locker2)
+            {
+                hash = Thread.CurrentThread.GetHashCode();
+                colnum.Add(hash, colNumber);
+            }
 
-        // n - массив. [0] - количество символов в столбце; [1] - задержка старта потока; [2] - номер колонки потока
-        static void DrawColumn(object o)
-        {
-            Arg arg = o as Arg;
+            colNumber += 2;
 
-            Thread.Sleep(arg.Delay);
+            int length = r.Next(3, 7);
 
-            int k = maxRows - arg.Length;
+            int k = maxRows - length;
+                
             while (k > 0)
             {
-                Console.Clear();
+                Thread.Sleep(r.Next(50, 3000));
 
-                for (int i = 0; i < maxRows - k - arg.Length; i++)
-                    Console.WriteLine();
-
-                for (int i = arg.Length; i >= 0; i--)
+                lock (locker2)
                 {
-                    ConsoleColor color = ConsoleColor.DarkGreen;
-                    if (i == 0) color = ConsoleColor.White;
-                    if (i == 1) color = ConsoleColor.Green;
-                    ShowSymbol(arg.ColNumber, "@", color);
+                    int colNumByHashCode = colnum[Thread.CurrentThread.GetHashCode()];
+
+                    Console.SetCursorPosition(colNumByHashCode, 0);
+
+                    for (int i = 0; i < maxRows - k - length; i++)
+                    {
+                        Console.Write(" ");
+                        Console.SetCursorPosition(colNumByHashCode, Console.CursorTop + 1);
+                    }
+
+                    for (int i = length; i >= 0; i--)
+                    {
+                        ConsoleColor color = ConsoleColor.DarkGreen;
+                        if (i == 0) color = ConsoleColor.White;
+                        if (i == 1) color = ConsoleColor.Green;
+                        Console.ForegroundColor = color;
+                        Console.Write(char_arr[r.Next(0, char_arr.Length)]);
+
+                        Console.SetCursorPosition(colNumByHashCode, Console.CursorTop + 1);
+                    }
+                    k--;
+                    if (k == 0)
+                    {
+                        for (int i = 0; i < maxRows; i++)
+                        {
+                            Console.SetCursorPosition(colNumByHashCode, i);
+                            Console.Write(" ");
+                        }
+                        k = maxRows - length;
+                    }
                 }
-                k--;
             }
         }
 
         static void Main(string[] args)
         {
             r = new Random();
-            Arg arg = new Arg();
+
+            Console.WindowWidth = maxCols * 2;
+            Console.WindowHeight = maxRows * 2;
+
+            Console.CursorVisible = false;
 
             for (int i = 0; i < maxCols; i++)
             {
-                arg.Length = r.Next(10);
-                arg.Delay = r.Next(1000, 5000);
-                arg.ColNumber = i + 1;
-
-                t = new Thread(DrawColumn);
-                t.Start(arg);
+                new Thread(DrawColumn).Start();
             }
 
             Console.ReadKey();
