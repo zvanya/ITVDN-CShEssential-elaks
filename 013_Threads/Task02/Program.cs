@@ -11,10 +11,11 @@ namespace Task02
     {
         static int maxRows = 30;
         static int maxCols = 60;
+        static Thread t = null;
         static Random r = null;
         static object locker1 = new object();
         static object locker2 = new object();
-        static int hash = 0;
+        static int tName = 0;
         static Dictionary<int, int> colnum = new Dictionary<int, int>();
         static int colNumber = 0;
         static char[] char_arr = new char[] { '!', '@', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' };
@@ -26,8 +27,8 @@ namespace Task02
 
             lock (locker2)
             {
-                hash = Thread.CurrentThread.GetHashCode();
-                colnum.Add(hash, colNumber);
+                tName = int.Parse(Thread.CurrentThread.Name);
+                colnum.Add(tName, colNumber);
 
                 colNumber += 2;
 
@@ -42,7 +43,7 @@ namespace Task02
 
                 lock (locker2)
                 {
-                    int colNumByHashCode = colnum[Thread.CurrentThread.GetHashCode()];
+                    int colNumByHashCode = colnum[int.Parse(Thread.CurrentThread.Name)];
 
                     Console.SetCursorPosition(colNumByHashCode, 0);
 
@@ -87,7 +88,9 @@ namespace Task02
 
             for (int i = 0; i < maxCols; i++)
             {
-                new Thread(DrawColumn).Start();
+                t = new Thread(DrawColumn);
+                t.Name = Convert.ToString(i);
+                t.Start();
             }
 
             Console.ReadKey();
