@@ -34,8 +34,10 @@ namespace AddTask
         {
             int k = 0; //количество четных элементов
             for (int i = 0; i < a.Length; i++)
+            {
                 if (a[i] % 2 == 0) k++;
-
+            }
+            
             arr = new int?[k];
 
             k = 0;
