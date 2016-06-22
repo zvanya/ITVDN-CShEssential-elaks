@@ -25,8 +25,8 @@ namespace AddTask
 
             for (int i = 0; i < mC.Count + 1; i++)
             {
-                if (mC[i] != null) Console.WriteLine(mC[i]);
-                else Console.WriteLine("null");
+                Console.WriteLine(mC[i] != null ? mC[i].ToString() : "null");
+                
             }
 
             Console.ReadKey();
