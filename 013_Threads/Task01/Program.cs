@@ -55,8 +55,8 @@ namespace Task01
                     for (int i = length; i >= 0; i--)
                     {
                         ConsoleColor color = ConsoleColor.DarkGreen;
-                        if (i == 0) color = ConsoleColor.White;
                         if (i == 1) color = ConsoleColor.Green;
+                        if (i == 0) color = ConsoleColor.White;
                         Console.ForegroundColor = color;
                         Console.Write(char_arr[r.Next(0, char_arr.Length)]);
 
