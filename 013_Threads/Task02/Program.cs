@@ -11,7 +11,6 @@ namespace Task02
     {
         static int maxRows = 30;
         static int maxCols = 60;
-        static Thread t = null;
         static Random r = null;
         static object locker1 = new object();
         static object locker2 = new object();
@@ -23,7 +22,8 @@ namespace Task02
         static void DrawColumn()
         {
             int length = 0;
-            int k = 0;
+            int k = 0; // 
+            int lastCurPos = 0;
 
             lock (locker2)
             {
@@ -39,19 +39,20 @@ namespace Task02
 
             while (k > 0)
             {
-                Thread.Sleep(r.Next(10, 4000));
+                Thread.Sleep(r.Next(10, 500));
 
                 lock (locker2)
                 {
                     int colNumByHashCode = colnum[int.Parse(Thread.CurrentThread.Name)];
 
-                    Console.SetCursorPosition(colNumByHashCode, 0);
+                    Console.SetCursorPosition(colNumByHashCode, lastCurPos == 0 ? 0 : lastCurPos - length - 1);
 
                     for (int i = 0; i < maxRows - k - length; i++)
                     {
                         Console.Write(" ");
                         Console.SetCursorPosition(colNumByHashCode, Console.CursorTop + 1);
                     }
+
 
                     for (int i = length; i >= 0; i--)
                     {
@@ -63,15 +64,17 @@ namespace Task02
 
                         Console.SetCursorPosition(colNumByHashCode, Console.CursorTop + 1);
                     }
+                    lastCurPos = Console.CursorTop;
                     k--;
                     if (k == 0)
                     {
-                        for (int i = 0; i < maxRows; i++)
+                        for (int i = maxRows - length - 1; i < maxRows; i++)
                         {
                             Console.SetCursorPosition(colNumByHashCode, i);
                             Console.Write(" ");
                         }
                         k = maxRows - length;
+                        lastCurPos = 0;
                     }
                 }
             }
@@ -88,9 +91,8 @@ namespace Task02
 
             for (int i = 0; i < maxCols; i++)
             {
-                t = new Thread(DrawColumn);
-                t.Name = Convert.ToString(i);
-                t.Start();
+                new Thread(DrawColumn)
+                { Name = Convert.ToString(i) }.Start();
             }
 
             Console.ReadKey();
