@@ -50,6 +50,11 @@ namespace AddTask
 
         }
 
+        public int Count
+        {
+            get { return arr.Length; }
+        }
+
         void Reset()
         {
             position = -1;
