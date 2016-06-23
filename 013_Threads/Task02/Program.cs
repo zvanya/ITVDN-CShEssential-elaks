@@ -9,8 +9,8 @@ namespace Task02
 {
     class Program
     {
-        static int maxRows = 30;
-        static int maxCols = 100;
+        static int maxRows = 40;
+        static int maxCols = 110;
         static Random r = null;
         static object locker1 = new object();
         static object locker2 = new object();
